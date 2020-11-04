@@ -66,10 +66,10 @@ function keyPressed() {
     Matter.Body.setStatic (packageBody, false);
   }
  if (keyCode === RIGHT_ARROW) {
-    helicopterSprite.x = helicopterSprite.x + 5;
+    helicopterSprite.x = helicopterSprite.position.x + 5;
   }
  if (keyCode === LEFT_ARROW) {
-    helicopterSprite.x = helicopterSprite.x - 5;
+    helicopterSprite.x = helicopterSprite.position.x - 5;
   }
 }
 
