@@ -65,6 +65,12 @@ function keyPressed() {
     // Look at the hints in the document and understand how to make the package body fall only on
     Matter.Body.setStatic (packageBody, false);
   }
+ if (keyCode === RIGHT_ARROW) {
+    helicopterSprite.x = helicopterSprite.x + 5;
+  }
+ if (keyCode === LEFT_ARROW) {
+    helicopterSprite.x = helicopterSprite.x - 5;
+  }
 }
 
 
