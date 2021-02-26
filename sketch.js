@@ -59,9 +59,11 @@ function draw() {
 
   if (keyDown("RIGHT_ARROW")){
     helicopterSprite.x = helicopterSprite.x + 5;
+    packageSprite.x =packageSprite.x + 5;	  
   }
   if (keyDown("LEFT_ARROW")){
     helicopterSprite.x = helicopterSprite.x - 5;
+    packageSprite.x = packageSprite.x + 5;
   }
 
 	drawSprites();
