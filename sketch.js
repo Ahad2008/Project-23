@@ -14,15 +14,6 @@ function preload()
 function setup() {
 	createCanvas(800, 700);
 	rectMode(CENTER);
-	
-
-	packageSprite=createSprite(width/2, 200, 10,10);
-	packageSprite.addImage(packageIMG)
-	packageSprite.scale=2
-
-	helicopterSprite=createSprite(width/2, 200, 10,10);
-	helicopterSprite.addImage(helicopterIMG)
-	helicopterSprite.scale=0.6
 
 	groundSprite=createSprite(width/2, height-35, width,10);
 	groundSprite.shapeColor=color(255)
@@ -44,37 +35,42 @@ function setup() {
 	rect1 = new Rect (400, 640, 300, 20);
 	rect2 = new Rect (250, 600, 20, 100);
 	rect3 = new Rect (550, 600, 20, 100);
+
+	packageSprite=createSprite(width/2, 200, 10,10);
+	packageSprite.addImage(packageIMG)
+	packageSprite.scale=0.2
   
+	helicopterSprite=createSprite(width/2, 200, 10,10);
+	helicopterSprite.addImage(helicopterIMG)
+	helicopterSprite.scale=0.6
 }
 
 
 function draw() {
   rectMode(CENTER);
   background(0);
-  //packageSprite.x= packageBody.position.x 
-  //packageSprite.y= packageBody.position.y 
+  packageSprite.x= packageBody.position.x 
+  packageSprite.y= packageBody.position.y 
   rect1.display();
   rect2.display();
   rect3.display();
 
-  if (keyDown("RIGHT_ARROW")){
-    helicopterSprite.x = helicopterSprite.x + 5;
-    packageSprite.x =packageSprite.x + 5;	  
-  }
-  if (keyDown("LEFT_ARROW")){
-    helicopterSprite.x = helicopterSprite.x - 5;
-    packageSprite.x = packageSprite.x - 5;
-  }
+  keyPressed();
 
 	drawSprites();
 }
 
 function keyPressed() {
- if (keyCode === DOWN_ARROW) {
-    // Look at the hints in the document and understand how to make the package body fall only on
-    Matter.Body.setStatic (packageBody, false);
-  }
-}
-
-
-
+	if (keyDown("RIGHT_ARROW")){
+		   helicopterSprite.x = helicopterSprite.x + 5;
+		   packageBody.position.x =packageBody.position.x + 5;	  
+		 }
+	if (keyDown("LEFT_ARROW")){
+		   helicopterSprite.x = helicopterSprite.x - 5;
+		   packageBody.position.x = packageBody.position.x - 5;
+		 }
+	if (keyCode === DOWN_ARROW) {
+	   // Look at the hints in the document and understand how to make the package body fall only on 
+	   Matter.Body.setStatic (packageBody, false);
+	 }
+   }
