@@ -16,7 +16,7 @@ function setup() {
 	rectMode(CENTER);
 	
 
-	packageSprite=createSprite(width/2, 80, 10,10);
+	packageSprite=createSprite(width/2, 200, 10,10);
 	packageSprite.addImage(packageIMG)
 	packageSprite.scale=0.2
 
@@ -63,7 +63,7 @@ function draw() {
   }
   if (keyDown("LEFT_ARROW")){
     helicopterSprite.x = helicopterSprite.x - 5;
-    packageSprite.x = packageSprite.x + 5;
+    packageSprite.x = packageSprite.x - 5;
   }
 
 	drawSprites();
